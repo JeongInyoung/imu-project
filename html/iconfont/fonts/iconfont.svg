@@ -1,0 +1,15 @@
+<?xml version="1.0" standalone="no"?> 
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" >
+<svg xmlns="http://www.w3.org/2000/svg">
+<defs>
+  <font id="iconfont" horiz-adv-x="90">
+    <font-face font-family="iconfont"
+      units-per-em="90" ascent="60"
+      descent="30" />
+    <missing-glyph horiz-adv-x="0" />
+    <glyph glyph-name="xing6"
+      unicode="&#xE001;"
+      horiz-adv-x="90" d=" M55.363 -30L35.236 5.283L66.475 60H87.5L56.262 5.283L76.391 -30H55.363zM22.322 -2.787L37.939 22.924L26.227 43.554H6.404L18.117 22.924L2.5 -2.787H22.322z" />
+  </font>
+</defs>
+</svg>

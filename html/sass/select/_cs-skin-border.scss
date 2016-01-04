@@ -1,0 +1,64 @@
+div.cs-skin-border {
+	background: transparent;
+	font-size: 12px;
+	color: #fff;
+}
+
+.cs-skin-border > span {
+	background: #555;
+}
+
+.cs-skin-border > span::after {
+	font-family: 'FontAwesome';
+	content: "\f107";
+	background:  #25282b;
+	color:  #00a1e9;
+	font-size: 16px;
+	padding: 0 8px;
+}
+
+.cs-skin-border ul span::after {
+	content: '';
+	opacity: 0;
+}
+
+.cs-skin-border .cs-selected span::after {
+	content: '';
+	color: #ddd9c9;
+	font-size: 12px;
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.cs-skin-border.cs-active > span {
+	background: #fff;
+	border-color: #fff;
+	color: #2980b9;
+}
+
+.cs-skin-border .cs-options {
+	color: #2980b9;
+	font-size: 12px;
+	opacity: 0;
+	-webkit-transition: opacity 0.2s, visibility 0s 0.2s;
+	transition: opacity 0.2s, visibility 0s 0.2s;
+}
+
+.cs-skin-border.cs-active .cs-options {
+	opacity: 1;
+	-webkit-transition: opacity 0.2s;
+	transition: opacity 0.2s;
+}
+
+.cs-skin-border ul span {
+	padding: 8px 14px;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+}
+
+.cs-skin-border .cs-options li span:hover,
+.cs-skin-border li.cs-focus span {
+	background: #00aeef;
+	color: #fff;
+}

@@ -1,0 +1,44 @@
+/* Fonts */
+// Nanum Gothic
+@import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
+// Open Sans
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400italic,400,300,600);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300,700);
+
+/*  Language */
+html {
+  &:lang(ko) body {font: 16px/1.5 'Nanum Gothic', NanumGothic, 'Open Sans', Arial, sans-serif;}
+  &:lang(en) body {font: 18px/1.5 'Open Sans', Arial, sans-serif;}
+}
+
+/* Icon Fonts */
+@font-face {
+	font-family: 'icomoon';
+	src:url('../fonts/icomoon.eot?-2jdysi');
+	src:url('../fonts/icomoon.eot?#iefix-2jdysi') format('embedded-opentype'),
+		url('../fonts/icomoon.woff?-2jdysi') format('woff'),
+		url('../fonts/icomoon.ttf?-2jdysi') format('truetype'),
+		url('../fonts/icomoon.svg?-2jdysi#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: 'icomoon';
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+	// Better Font Rendering
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-uniF077:before {
+	content: "\f077";
+}
+.icon-uniF107:before {
+	content: "\f107";
+}

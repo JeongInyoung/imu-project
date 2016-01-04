@@ -1,0 +1,16 @@
+=top-button($color-gray: null, $color-gray-hover: null, $color-white: null, $color-white-hover: null)
+	color: $color-gray
+	color: $color-white
+	&:hover
+		color: $color-gray-hover
+		color: $color-white-hover
+
+a.top
+	font-size: 30px
+	text-align: right
+	letter-spacing: -0.05em
+	@include top-button(#aaa, #00aeef)
+
+a.top-white
+	@extend a.top
+	@include top-button($color-white: #fff, $color-white-hover: #333)

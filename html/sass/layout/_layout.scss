@@ -1,0 +1,359 @@
+.main {
+	@include susy-breakpoint($desktop) {
+		padding-top: 80px;
+		padding-bottom: 80px;
+	}
+	@include susy-breakpoint($tablet-760) {
+		padding-top: 60px;
+		padding-bottom: 60px;
+	}
+	@include susy-breakpoint($tablet-640) {
+		padding-top: 40px;
+		padding-bottom: 40px;
+	}
+	@include susy-breakpoint($mobile-480) {
+		padding-top: 20px;
+		padding-bottom: 20px;
+	}
+}
+
+.main {
+	> article {
+		&:nth-child(1), &:nth-child(2), &:nth-child(4) {
+			overflow: hidden;
+			box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+			margin-bottom: 10px;
+			box-sizing: border-box;
+		}
+		&:nth-child(3), &:nth-child(5), &:nth-child(6) {
+			> div {
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+				margin-bottom: 10px;
+				box-sizing: border-box;
+				&:last-child {
+					margin-bottom: 10px;
+				}
+			}
+		}
+	}
+}
+
+.main {
+	> article {
+		&.imu-box1 {
+			height: 190px;
+			@include susy-breakpoint($mobile-480) {
+				height: 332px;
+			}
+		}
+		&.imu-box2 {
+/* 			height: 332px; */
+			padding: 20px;
+		}
+		&.imu-box3 {
+			> div {
+				height: (332px - 10) / 2;
+			}
+		}
+/* 		&.imu-box4 {
+			height: 332px;
+		}
+		&.imu-box5 {
+			> div {
+				height: (332px - 10) / 2;
+			}
+		} */
+		&.imu-box6 {
+			> div {
+				height: (332px - 10) / 2;
+			}
+		}
+		&.imu-box7 {
+			> div {
+				margin-bottom: 10px;
+				&:last-child {
+					margin-bottom: 0;
+				}
+			}
+			@include susy-breakpoint($desktop, 4 static (242px 10px)) {
+				height: (332px - 20) / 3;
+				box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.25);
+			}
+		}
+	}
+}
+.imu-box1 {
+	.main_bn_slide {
+		position: relative;
+		#main_bn {
+			padding: 0;
+			margin: 0;
+			height: 190px;
+			li {
+				width: 100%;
+				height: 100%;
+				.txt02 {
+					position: absolute;
+					top: 30%;
+					right: 30px;
+					width: 80%;
+				}
+				@include susy-breakpoint($mobile-480) {
+					.txt02 {
+						top: 40%;
+						width: auto;
+						height: auto;
+					}
+				}
+			}
+			li {
+				.slide {
+					width: 100%;
+					height: 100%;
+					overflow: hidden;
+				}
+				&:nth-child(1) {
+					.slide {
+						background-image:
+						url(../images/main/imu_dream.png),
+						url(../images/main/main1.png);
+						background-repeat:
+						no-repeat,
+						no-repeat;
+						background-size:
+						196px 20px,
+						cover;
+						background-position:
+						top 10px left 20px,
+						top 50% center ;
+					}
+				}
+				&:nth-child(2) {
+					.slide {
+						background-image:
+						url(../images/main/imu_dream.png),
+						url(../images/main/main2.png);
+						background-repeat:
+						no-repeat,
+						no-repeat;
+						background-size:
+						196px 20px,
+						cover;
+						background-position:
+						top 10px left 20px ,
+						top 50% center ;
+					}
+				}
+			}
+		}
+		@include susy-breakpoint($mobile-480) {
+			#main_bn {
+				height: 332px;
+			}
+		}
+	}
+}
+.imu-box1 {
+	.main_bn_slide {
+		#main_bn_bt {
+			position: absolute;
+			bottom: 12px;
+			right: 12px;
+			margin: 0;
+			padding: 0;
+			li {
+				float: left;
+				padding-right: 8px;
+				&:last-child {
+					padding-right: 0;
+				}
+				&:hover > a, &.active > a {
+					background: #fff;
+				}
+				a {
+					display: block;
+					width: 12px;
+					height: 12px;
+					text-indent: -999px;
+					border-radius: 10px;
+					background: transparent;
+					cursor: pointer;
+					overflow: hidden;
+					box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+				}
+			}
+		}
+	}
+}
+
+.imu-box2 {
+	background: #e1452c;
+	> h4 {
+		font-size: 20px;
+		color: #fff;
+		font-weight: normal;
+	}
+	> a {
+		display: block;
+		width: 100%;
+		text-align: center;
+		> img {
+			padding-top: 50px;
+			padding-bottom: 50px;
+		}
+	}
+	> p {
+		color: #fff;
+		font-size: 12px;
+	}
+	> p.line {
+		width: 100%;
+		font-size: 14px;
+		padding-bottom: 4px;
+		margin-bottom: 6px;
+		border-bottom: 3px solid #f0a396;
+	}
+}
+
+.imu-box3 {
+	> div {
+		padding: 20px;
+		img {
+			width: auto;
+			height: 14px;
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+	div:nth-child(1) {
+		background: url(../images/main/p2c100.png) top right no-repeat;
+		background-color: #fff;
+	}
+	div:nth-child(2) {
+		text-align: right;
+		background: url(../images/main/p2ct5.png) bottom left no-repeat;
+		background-color: #fff;
+	}
+}
+@include susy-breakpoint($tablet-640, 6 1/8) {
+	.imu-box3 {
+		div:nth-child(1) {
+			@include span(3);
+		}
+		div:nth-child(2) {
+			@include span(3 last);
+		}
+	}
+}
+
+.imu-box4 {
+	@extend .imu-box2;
+	margin-bottom: 0;
+	background: #2b60c0;
+	> p.line {
+		border-bottom: 3px solid #8faade;
+	}
+}
+
+.imu-box5 {
+	div {
+		overflow: hidden;
+		background: #fff;
+		padding: 20px;
+		h4 {
+			font-size: 16px;
+			span {
+				color: $up-blue;
+			}
+		}
+		p {
+			font-size: 12px;
+		}
+	}
+	div:nth-child(1) {
+		ul {
+			max-width: 100%;
+			margin: 0;
+			padding: 0;
+			li {
+				float: left;
+				margin-top: 20px;
+			}
+		}
+	}
+	div:nth-child(2) {
+		ul {
+			max-width: 100%;
+			margin: 0;
+			padding: 0;
+			li {
+				float: left;
+				font-size: 12px;
+			}
+		}
+	}
+}
+
+@include susy-breakpoint($tablet-640, 6 1/8) {
+	.imu-box5 {
+		div:nth-child(1) {
+			@include span(3);
+		}
+		div:nth-child(2) {
+			@include span(3 last);
+		}
+	}
+}
+
+.imu-box6 {
+	background-color: transparent;
+	div:nth-child(1) {
+		background: #3f3f3f;
+	}
+	div:nth-child(2) {
+		background: $box-green;
+	}
+}
+
+@include susy-breakpoint($tablet-640) {
+	.imu-box4, .imu-box6 {
+		@include break;
+	}
+}
+
+.imu-box7 {
+	> div {
+		&:nth-child(1) {
+			background: $box-yollow;
+		}
+		&:nth-child(2) {
+			background: url(../images/common/bg-grid.png) #fff;
+		}
+		&:nth-child(3) {
+			background: $box-purple;
+		}
+	}
+	@include susy-breakpoint($tablet-760, 12 1/24) {
+		div:nth-child(1) {
+			@include span(3);
+		}
+		div:nth-child(2) {
+			@include span(3);
+		}
+		div:nth-child(3) {
+			@include span(3 last);
+		}
+	}
+	@include susy-breakpoint($mobile-480, 4 1/8) {
+		div:nth-child(1) {
+			@include span(4);
+		}
+		div:nth-child(2) {
+			@include span(4);
+		}
+		div:nth-child(3) {
+			@include span(4);
+		}
+	}
+}
