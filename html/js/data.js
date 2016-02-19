@@ -114,5 +114,11 @@ IMU.data1 = [
 		'img_src' : '../images/company/archives_img19',
 		'img_alt': 'C-100 KC',
 		'span_text': 'C-100 KC'
+	},
+	{
+		'a_href': '../views/data-print/archives_img20.html',
+		'img_src' : '../images/company/archives_img20',
+		'img_alt': '보안 카드리더기의 KC인증',
+		'span_text': '보안 카드리더기의 KC인증'
 	}
 ];
