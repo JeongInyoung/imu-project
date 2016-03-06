@@ -17,11 +17,11 @@
 @font-face
 {
     font-family: 'iconfont';
-    src: url('/fonts/iconfont.eot?h=2c11754ed888d9a40861a65d12656c6d');
-    src: url('/fonts/iconfont.eot?h=2c11754ed888d9a40861a65d12656c6d#iefix') format('eot'),
-    url('/fonts/iconfont.woff?h=2c11754ed888d9a40861a65d12656c6d') format('woff'),
-    url('/fonts/iconfont.ttf?h=2c11754ed888d9a40861a65d12656c6d') format('truetype'),
-    url('/fonts/iconfont.svg?h=2c11754ed888d9a40861a65d12656c6d#iconfont') format('svg');
+    src: url('/fonts/iconfont.eot?h=4ef073b7459b76a7dee6e1b15127c455');
+    src: url('/fonts/iconfont.eot?h=4ef073b7459b76a7dee6e1b15127c455#iefix') format('eot'),
+    url('/fonts/iconfont.woff?h=4ef073b7459b76a7dee6e1b15127c455') format('woff'),
+    url('/fonts/iconfont.ttf?h=4ef073b7459b76a7dee6e1b15127c455') format('truetype'),
+    url('/fonts/iconfont.svg?h=4ef073b7459b76a7dee6e1b15127c455#iconfont') format('svg');
 }
 
 .iconfont
@@ -45,13 +45,24 @@
 }
 
 
-.iconfont-xing6
+.iconfont-designer
 {
     // IE8 : Polyfill using behavior
     behavior: url(/fonts/iconfont.htc);
     icon: 'E001';
 }
-.iconfont-xing6:before
+.iconfont-designer:before
 {
     content: '\E001';
+}
+
+.iconfont-merchant
+{
+    // IE8 : Polyfill using behavior
+    behavior: url(/fonts/iconfont.htc);
+    icon: 'E002';
+}
+.iconfont-merchant:before
+{
+    content: '\E002';
 }

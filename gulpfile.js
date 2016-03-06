@@ -10,9 +10,10 @@ var gulp			= require('gulp'),
 
 	includer		= require('gulp-html-ssi'),
 
-	sass			= require('gulp-ruby-sass'),
+	sass 			= require('gulp-sass'),
 	sourcemaps	= require('gulp-sourcemaps'),
 	csso			= require('gulp-csso'),
+	gcmq 			= require('gulp-group-css-media-queries'),
 
 	concat			= require('gulp-concat'),
 	uglify			= require('gulp-uglify'),
@@ -50,7 +51,7 @@ var dir = {
 var js_order = [
 	// dir.js + '/**/*.js',
 	dir.js + '/jquery.ulslide.js',			// slide banner
-	dir.js + '/classie.js',				// Tab action & style 설정
+	dir.js + '/classie.js',					// Tab action & style 설정
 	dir.js + '/smooth-scroll.js',			// 상, 하 이동 스크롤 부드럽게
 	dir.js + '/selectFx.js',				// Select 스타일 변경
 	dir.js + '/echo.min.js',				// Loading Image 사용
@@ -67,15 +68,16 @@ var moveJS = [
 // =======================================
 // 기본 업무
 // =======================================
-gulp.task('default', ['remove', 'server']);
+gulp.task('default', ['imagemin', 'iconfont'], function(){
+	gulp.start('server');
+});
 
 // =======================================
 // 빌드 업무
 // =======================================
-gulp.task('build', function() {
+gulp.task('build', ['remove:build'], function() {
 	compress.css = true;
 	compress.js  = true;
-	gulp.start('remove');
 	gulp.start('htmlSSI');
 	gulp.start('sass');
 	gulp.start('js');
@@ -100,7 +102,7 @@ gulp.task('watch', function() {
 // =======================================
 // 서버 업무
 // =======================================
-gulp.task('server', ['imagemin', 'iconfont', 'htmlSSI', 'sass', 'js'], function() {
+gulp.task('server', ['htmlSSI', 'sass', 'js'], function() {
 	browserSync.init({
 		// 알림 설정
 		notify: !true,
@@ -123,14 +125,15 @@ gulp.task('server', ['imagemin', 'iconfont', 'htmlSSI', 'sass', 'js'], function(
 // =======================================
 // 폴더 제거 업무
 // =======================================
-gulp.task('remove', shell.task('rm -rf ' + BUILD + ' ' + SRC + '/iconfont/fonts ' + SRC + '/iconfont/preview ' + SRC + '/sass/fonts/_iconfont.scss' + ' cache'));
+gulp.task('remove', shell.task('rm -rf ' + BUILD + ' ' + SRC + '/iconfont/fonts ' + SRC + '/iconfont/preview ' + SRC + '/sass/fonts/_iconfont.scss'));
+gulp.task('remove:build', shell.task('rm -rf ' + BUILD));
 
 
 // =======================================
 // HTML SSI(Server Side Include) 업무
 // =======================================
 gulp.task('htmlSSI', function() {
-	gulp.src( SRC + '/**/*.html' )
+	gulp.src( [  '!html/iconfont/',  '!html/iconfont/**/*.html', SRC + '/**/*.html' ])
 		.pipe( includer() )
 		.pipe( gulp.dest( BUILD ) );
 });
@@ -139,27 +142,17 @@ gulp.task('htmlSSI', function() {
 // =======================================
 // Sass 업무
 // =======================================
-gulp.task('sass', function() {
-	return sass( SRC + '/sass', {
-		defaultEncoding : 'utf-8',
-		compass: true,
-		require: ['susy'],
-		style: compress.css_singleline ? 'compact' : 'expanded',
-		sourcemap: true,
-		lineNumbers: false,
-		// noCache : true, // 캐시 사용 안할 시 'true' 캐시 사용 시 '!true',
-		cacheLocation: "./cache"
-	})
-	.on('error', function(err) {
-			console.error('Error!', err.message);
-		})
-		.pipe( sourcemaps.write('./', {
-			includeContent: false,
-			sourceRoot: './'
-		}) )
-		.pipe( gulp.dest(BUILD + '/css') )
-		.pipe( filter("**/*.css") )
-		.pipe( reload({stream: true}) );
+
+gulp.task('sass', function () {
+	return gulp.src(SRC + '/sass/**/*.{sass,scss}')
+	.pipe(sass({
+		outputStyle: 'compact',
+		'indentedSyntax': true
+	}).on('error', sass.logError))
+	.pipe(gcmq())
+	.pipe( gulp.dest(BUILD + '/css') )
+	.pipe( filter("**/*.css") )
+	.pipe( reload({stream: true}) );
 });
 
 gulp.task('css:min', function() {
@@ -206,7 +199,14 @@ gulp.task('imagemin', function () {
 // =======================================
 // Iconfont 업무
 // =======================================
-gulp.task('iconfont', ['iconfont:make']);
+gulp.task('iconfont', ['iconfont:make'], function(cb) {
+	setTimeout(function() {
+		gulp.start('iconfont:move');
+		setTimeout(function() {
+			cb();
+		}, 1);
+	}, 1000);
+});
 
 gulp.task('iconfont:make', function(cb){
 	iconic({
@@ -227,13 +227,9 @@ gulp.task('iconfont:make', function(cb){
 	}, cb);
 	// node_modules/gulp-iconic/index.js 파일 => className: 'iconfont 를 className: 'icon' 으로 변경
 
-	setTimeout(function() {
-		gulp.start('iconfont:move');
-	}, 1000);
-
 });
 
-gulp.task('iconfont:move', function(){
-	gulp.src(SRC + '/iconfont/fonts/**/*')
+gulp.task('iconfont:move', function() {
+	gulp.src(SRC + '/iconfont/fonts/*')
 		.pipe( gulp.dest( BUILD + '/fonts' ) );
 });

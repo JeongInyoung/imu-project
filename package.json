@@ -1,0 +1,36 @@
+{
+  "name": "ssi-sass-server-master",
+  "version": "0.0.2",
+  "description": "SSI, SASS 프로젝트 관리",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "gulp": "^3.8.11"
+  },
+  "devDependencies": {
+    "browser-sync": "^2.7.13",
+    "gulp-concat": "^2.6.0",
+    "gulp-csso": "^1.0.0",
+    "gulp-filter": "^2.0.2",
+    "gulp-group-css-media-queries": "^1.1.0",
+    "gulp-html-ssi": "^0.0.92",
+    "gulp-iconic": "^3.0.0",
+    "gulp-if": "^1.2.5",
+    "gulp-imagemin": "^2.3.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.2.0",
+    "gulp-shell": "^0.4.2",
+    "gulp-sourcemaps": "^1.5.2",
+    "gulp-uglify": "^1.2.0",
+    "imagemin-pngquant": "^4.1.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/JeongInyoung/work"
+  },
+  "keywords": [
+    "ssi",
+    "sass"
+  ],
+  "author": "inyoung",
+  "license": "ISC"
+}

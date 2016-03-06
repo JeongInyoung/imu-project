@@ -31,8 +31,7 @@ body {
 		margin: 0;
 	}
 }
-// border-box 설정
-@include border-box-sizing;
+
 ul, li {
 	list-style: none;
 	outline: none;

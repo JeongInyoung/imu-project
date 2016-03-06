@@ -71,11 +71,11 @@
 
       @font-face {
         font-family: 'iconfont';
-        src: url('font/iconfont.eot?h=2c11754ed888d9a40861a65d12656c6d');
-        src: url('font/iconfont.eot?h=2c11754ed888d9a40861a65d12656c6d#iefix') format('eot'),
-          url('font/iconfont.woff?h=2c11754ed888d9a40861a65d12656c6d') format('woff'),
-          url('font/iconfont.ttf?h=2c11754ed888d9a40861a65d12656c6d') format('truetype'),
-          url('font/iconfont.svg?h=2c11754ed888d9a40861a65d12656c6d#iconfont') format('svg');
+        src: url('font/iconfont.eot?h=4ef073b7459b76a7dee6e1b15127c455');
+        src: url('font/iconfont.eot?h=4ef073b7459b76a7dee6e1b15127c455#iefix') format('eot'),
+          url('font/iconfont.woff?h=4ef073b7459b76a7dee6e1b15127c455') format('woff'),
+          url('font/iconfont.ttf?h=4ef073b7459b76a7dee6e1b15127c455') format('truetype'),
+          url('font/iconfont.svg?h=4ef073b7459b76a7dee6e1b15127c455#iconfont') format('svg');
       }
 
       .iconfont {
@@ -110,12 +110,23 @@
       /**
        * IE8 : Polyfill using behavior
        */
-      .iconfont-xing6 {
+      .iconfont-designer {
         behavior: url(font/iconfont.htc);
         icon: 'E001';
       }
-      .iconfont-xing6:before {
+      .iconfont-designer:before {
         content: '\E001';
+      }
+      
+      /**
+       * IE8 : Polyfill using behavior
+       */
+      .iconfont-merchant {
+        behavior: url(font/iconfont.htc);
+        icon: 'E002';
+      }
+      .iconfont-merchant:before {
+        content: '\E002';
       }
       
     </style>
@@ -126,9 +137,16 @@
       <ul class="glyph">
         <li>
           <span class="glyph-ellipsis">
-            <span class="glyph-icon"><i class="iconfont iconfont-xing6"></i></span>
-            <span class="glyph-class">iconfont-xing6</span>
+            <span class="glyph-icon"><i class="iconfont iconfont-designer"></i></span>
+            <span class="glyph-class">iconfont-designer</span>
             <span class="glyph-codepoint">E001</span>
+          </span>
+        </li>
+        <li>
+          <span class="glyph-ellipsis">
+            <span class="glyph-icon"><i class="iconfont iconfont-merchant"></i></span>
+            <span class="glyph-class">iconfont-merchant</span>
+            <span class="glyph-codepoint">E002</span>
           </span>
         </li>
       </ul>
